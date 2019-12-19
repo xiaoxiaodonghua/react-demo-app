@@ -1,4 +1,7 @@
-import React, {useState, useEffect, useMemo} from 'react';
+import React, {useState, useEffect, useMemo, createContext} from 'react';
+import Child2 from './child2';
+
+export const ChildContext = createContext({});
 
 function Home() {
     let [count, setCount] = useState(0);
@@ -17,6 +20,9 @@ function Home() {
             <span>{count}</span><br />
             <button onClick={() => setCount(++count)}>点击我</button><br />
             <button onClick={() => changeName()}>点点我</button>
+            <ChildContext.Provider value={count}>
+                <Child2 />
+            </ChildContext.Provider>
             <div>
                 <Child name={count} />
             </div>
@@ -26,7 +32,7 @@ function Home() {
 
 export default Home;
 
-function Child(props) {
+function Child(props: any) {
     let [name, setName] = useState('小小冬');
 
     
