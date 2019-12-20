@@ -1,0 +1,11 @@
+#home {
+    display: flex;
+    >div:nth-child(1) {
+        width: 10%;
+        height: 100%;
+    }
+    >div:nth-child(2) {
+        flex: 1 1;
+        height: 100%;
+    }
+}
