@@ -1,53 +1,31 @@
-import React, {useState, useEffect, useMemo, createContext} from 'react';
-import Child2 from './child2';
+import React from 'react';
+import Child1 from './example/example1';
 
-export const ChildContext = createContext({});
+/**
+ * Basic Hooks
+ *  useState
+ *  useEffect
+ *  useContent
+ * 
+ * Additional Hooks
+ *  useReducer
+ *  useCallback
+ *  useMemo
+ *  useRef
+ *  useImperativeHandle
+ *  useLayoutEffect
+ *  useDebugValue
+ * **/ 
 
-function Home() {
-    let [count, setCount] = useState(0);
 
-    
-    useEffect(() => {
-        console.log('喔喔喔喔奶糖')
-    },[])
-
-    function changeName() {
-        console.log(233)
-    }
-    return (
+ function Index() {
+     return (
         <div>
-            我这才是首页我要开始尝试hooks
-            <span>{count}</span><br />
-            <button onClick={() => setCount(++count)}>点击我</button><br />
-            <button onClick={() => changeName()}>点点我</button>
-            <ChildContext.Provider value={count}>
-                <Child2 />
-            </ChildContext.Provider>
-            <div>
-                <Child name={count} />
-            </div>
+            <span>我要测试React Hooks Api</span>
+            <Child1 />
         </div>
-    )
-}
+     )
+ }
 
-export default Home;
 
-function Child(props: any) {
-    let [name, setName] = useState('小小冬');
-
-    
-
-    function changeName() {
-        console.log('我这是子组件的东西');
-        return 333 + name;
-    }
-    const action = useMemo(() => changeName(), [name])
-
-    return (
-        <div>
-            <span>{props.name}</span>
-            <span onClick={() => setName('我改民资')}>{action}</span>
-        </div>
-    )
-
-}
+ export default Index;
