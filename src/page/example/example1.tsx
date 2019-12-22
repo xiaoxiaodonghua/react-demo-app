@@ -9,7 +9,7 @@ function Index() {
         <div>
             我这是要用useState
             <div>计数器{count}</div>
-            <button onClick={() => setCount(++count)}>点我可以加一哦</button>
+            <button onClick={() => setCount(1)}>点我可以加一哦</button>
         </div>
     );
 }
