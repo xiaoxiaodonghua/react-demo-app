@@ -1,9 +1,7 @@
 import React, {useContext, memo} from 'react';
-import {ContextBox} from '../example3';
 
 function Index() {
-    const value = useContext(ContextBox);
-    console.log(value);
+    console.log('子组件二');
     return (
         <div>
             我这里是exmple3的子组件
@@ -11,4 +9,4 @@ function Index() {
     )
 }
 
-export default Index;
+export default memo(Index);
